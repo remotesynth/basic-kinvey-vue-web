@@ -1,0 +1,41 @@
+<html>
+<head>
+    <title>Test Load Kinvey Data</title>
+    <script src="https://da189i1jfloii.cloudfront.net/js/kinvey-html5-sdk-3.9.0.min.js"></script>
+</head>
+<body>
+
+</body>
+<script>
+var client = Kinvey.init({
+    appKey: 'kid_SkbG2i0hW',
+    appSecret: 'dff4c87cbcd544ee9e9d9a79123097d4'
+});
+
+var activeUser = Kinvey.User.getActiveUser(client);
+
+if (!activeUser) {
+    var promise = Kinvey.User.signup()
+        .then(function(user) {
+            console.log(user);
+            loadDataStore();
+        }).catch(function(error) {
+            console.log(error);
+        });
+}
+else {
+    loadDataStore();
+}
+
+function loadDataStore() {
+    var dataStore = Kinvey.DataStore.collection('shrines');
+    dataStore.pull()
+        .then(function(regions) {
+            console.log(regions);
+        })
+        .catch(function(error) {
+            console.log(error);
+        })
+}
+</script>
+</html>

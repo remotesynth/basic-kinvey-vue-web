@@ -1,0 +1,15 @@
+{
+  "name": "import",
+  "version": "1.0.0",
+  "description": "load data into kinvey",
+  "main": "import.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Brian Rinaldi",
+  "license": "MIT",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.2",
+    "request": "^2.83.0"
+  }
+}
