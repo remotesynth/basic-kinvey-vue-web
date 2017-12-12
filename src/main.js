@@ -1,11 +1,8 @@
-import kinveyConfig from '../kinvey-config'
+import kinvey from './kinvey-vue/index'
 import Vue from 'vue'
 import App from './App.vue'
 
-Vue.prototype.$kinvey= {
-  appkey: kinveyConfig.APPKEY,
-  appsecret: kinveyConfig.APPSECRET
-};
+Vue.prototype.$kinvey= kinvey;
 
 new Vue({
   el: '#app',
