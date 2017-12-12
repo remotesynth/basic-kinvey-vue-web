@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Kinvey from 'kinvey-html5-sdk'
-import KinveyConfig from '../../kinvey-config'
+import KinveyConfig from './kinvey-config'
 
 const KinveyVue = new Vue({
     data: {
@@ -16,7 +16,7 @@ const KinveyVue = new Vue({
             appSecret: this.appsecret
         });
         this.activeUser = Kinvey.User.getActiveUser(client);
-        
+
         if (!this.activeUser) {
             var that = this;
             console.log('signing up');
