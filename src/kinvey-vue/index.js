@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import Kinvey from 'kinvey-html5-sdk'
+import { Kinvey } from 'kinvey-html5-sdk'
 import KinveyConfig from './kinvey-config'
 
 const KinveyVue = new Vue({
